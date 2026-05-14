@@ -32,7 +32,7 @@ body {
 </style>
 </head>
 
-<body onclick="startAudio()">
+<body onclick="toggleAudio()">
 
 <div id="message">
     화면을 터치하여<br>
@@ -44,13 +44,26 @@ body {
 </audio>
 
 <script>
-function startAudio() {
-    const audio = document.getElementById("audio");
+const audio = document.getElementById("audio");
+const message = document.getElementById("message");
 
-    audio.play();
+function toggleAudio() {
 
-    document.getElementById("message").innerHTML =
-        "음성 안내가 재생 중입니다";
+    if (audio.paused) {
+
+        audio.play();
+
+        message.innerHTML =
+            "음성 안내가 재생 중입니다<br><br>다시 터치하면 종료됩니다";
+
+    } else {
+
+        audio.pause();
+        audio.currentTime = 0;
+
+        message.innerHTML =
+            "화면을 터치하여<br>사용법 음성 안내 듣기";
+    }
 }
 </script>
 

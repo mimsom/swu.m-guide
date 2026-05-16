@@ -12,31 +12,76 @@ body {
     width: 100vw;
     height: 100vh;
 
+    background-color: white;
+
+    overflow: hidden;
+    position: relative;
+
+    font-family: sans-serif;
+}
+
+/* 가운데 가로 3/5 영역 */
+#center-box {
+    position: absolute;
+
+    top: 20%;
+    left: 0;
+
+    width: 100vw;
+    height: 60vh;
+
+    background-color: #25308F;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: #87CEEB;
-    color: white;
-
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-
     cursor: pointer;
 }
 
+/* 메인 문구 */
 #message {
-    padding: 20px;
+    color: white;
+
+    font-size: 4rem;
+    font-weight: bold;
+
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* 우측 하단 텍스트 */
+#footer {
+    position: absolute;
+
+    right: 40px;
+    bottom: 40px;
+
+    color: #25308F;
+
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    text-align: right;
+    line-height: 1.4;
 }
 </style>
 </head>
 
-<body onclick="toggleAudio()">
+<body>
 
-<div id="message">
-    화면을 터치하여<br>
-    사용법 음성 안내 듣기
+<div id="center-box" onclick="toggleAudio()">
+
+    <div id="message">
+        화면을 터치하여<br>
+        사용법 음성 안내 듣기
+    </div>
+
+</div>
+
+<div id="footer">
+    서울여자대학교<br>
+    바롬종합설계프로젝트
 </div>
 
 <audio id="audio">

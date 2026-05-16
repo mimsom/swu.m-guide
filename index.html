@@ -14,23 +14,20 @@
     
 body {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+
+    min-height: 100dvh;
 
     background-color: white;
 
-    overflow: hidden;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 
     font-family: 'MaruBuri', sans-serif;
 }
 
 /* 가운데 가로 3/5 영역 */
 #center-box {
-    position: absolute;
-
-    top: 10%;
-    left: 0;
+    margin-top: 10vh;
 
     width: 100vw;
     height: 60vh;
@@ -42,6 +39,9 @@ body {
     align-items: center;
 
     cursor: pointer;
+
+    box-sizing: border-box;
+    padding: 40px 20px;
 }
 
 /* 메인 문구 */
@@ -57,10 +57,11 @@ body {
 
 /* 우측 하단 텍스트 */
 #footer {
-    position: absolute;
+    margin-top: auto;
 
-    right: 40px;
-    bottom: 80px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 20px;
 
     color: #25308F;
 
@@ -70,6 +71,22 @@ body {
     text-align: right;
     line-height: 1.4;
 }
+
+    /* 모바일 대응 */
+@media (max-width: 768px) {
+
+    #message {
+        font-size: 1.8rem;
+    }
+
+    #footer {
+        font-size: 1rem;
+
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+}
+
 </style>
 </head>
 
@@ -104,7 +121,7 @@ function toggleAudio() {
         audio.play();
 
         message.innerHTML =
-            "음성 안내가 재생 중입니다<br>다시 터치하면 종료됩니다";
+            "음성 안내 재생 중<br>다시 터치 시, 종료";
 
     } else {
 

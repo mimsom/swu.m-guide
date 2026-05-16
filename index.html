@@ -7,6 +7,11 @@
 <title>NFC 사용법 음성 안내</title>
 
 <style>
+@font-face {
+    font-family: 'MaruBuri';
+    src: url('./MaruBuri-Regular.otf') format('opentype');
+}
+    
 body {
     margin: 0;
     width: 100vw;
@@ -17,14 +22,14 @@ body {
     overflow: hidden;
     position: relative;
 
-    font-family: sans-serif;
+    font-family: 'MaruBuri', sans-serif;
 }
 
 /* 가운데 가로 3/5 영역 */
 #center-box {
     position: absolute;
 
-    top: 20%;
+    top: 10%;
     left: 0;
 
     width: 100vw;
@@ -43,11 +48,11 @@ body {
 #message {
     color: white;
 
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: bold;
 
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* 우측 하단 텍스트 */
